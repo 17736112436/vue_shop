@@ -2,13 +2,18 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import login from '../components/login.vue'
 import home from '../components/home.vue'
+import Welcome from '../components/welcome.vue'
+import users from '../components/user/users.vue'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes: [
     { path: '/', redirect: '/login' },
     { path: '/login', component: login },
-    { path:'/home',component:home}
+    { path:'/home',component:home,redirect:'/welcome',children:[
+      {path:'/welcome',component:Welcome},
+      {path:'/users',component:users}
+    ]}
   ]
 })
 //挂载路由导航守卫

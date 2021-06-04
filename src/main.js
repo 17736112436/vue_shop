@@ -10,6 +10,12 @@ Vue.prototype.$http = axios;//给vue的原型对象上添加方法，所有的vu
 import './assets/css/global.css'
 //导入字体图标
 import './assets/fonts/iconfont.css'
+// 在挂载之前设置请求拦截器
+axios.interceptors.request.use(config=>{
+   config.headers.Authorization = window.sessionStorage.getItem('token');
+  //  console.log(config);
+   return config;
+})
 Vue.config.productionTip = false
 
 new Vue({
