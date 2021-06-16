@@ -10,6 +10,7 @@ Vue.prototype.$http = axios;//给vue的原型对象上添加方法，所有的vu
 import './assets/css/global.css'
 //导入字体图标
 import './assets/fonts/iconfont.css'
+import TreeTable from 'vue-table-with-tree-grid'
 // 在挂载之前设置请求拦截器
 axios.interceptors.request.use(config=>{
    config.headers.Authorization = window.sessionStorage.getItem('token');
@@ -18,6 +19,7 @@ axios.interceptors.request.use(config=>{
 })
 Vue.config.productionTip = false
 
+Vue.component('tree-table',TreeTable)
 new Vue({
   router, // 将路由挂载到页面上
   render: h => h(App)// 将APP渲染到页面
