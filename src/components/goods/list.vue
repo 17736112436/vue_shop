@@ -31,7 +31,7 @@
               </el-table-column>
               <el-table-column label="操作" width="130px" >
                 <template slot-scope="scope">
-                  <el-button @click="showEditDialog(scope.row.attr_id)" size="mini" icon="el-icon-edit" type="primary"></el-button>
+                  <el-button  size="mini" icon="el-icon-edit" type="primary"></el-button>
                   <el-button size="mini" @click="removeById(scope.row.goods_id)" icon="el-icon-delete" type="danger"></el-button>  
                 </template>
               </el-table-column>
